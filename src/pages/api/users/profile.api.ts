@@ -13,7 +13,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  console.log('Opa')
   if (req.method !== 'PUT') {
     return res.status(405).end()
   }
@@ -27,9 +26,9 @@ export default async function handler(
   if (!session) {
     return res.status(401).end()
   }
-  console.log('Epa')
+
   const { bio } = updateProfileBodySchema.parse(req.body)
-  console.log('Ipa')
+
   await prisma.user.update({
     where: {
       id: session.user.id,
