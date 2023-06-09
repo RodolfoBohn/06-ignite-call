@@ -71,8 +71,6 @@ export function Calendar({ onSelectedDate, selectedDate }: CalendarProps) {
     },
   )
 
-  console.log(blockedDays)
-
   const calendarWeekDays = useMemo(() => {
     const daysInMonthArray = Array.from({
       length: currentDate.daysInMonth(),
